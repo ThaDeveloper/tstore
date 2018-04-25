@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Product code:</strong>
+  <%= @sale.product_code %>
+</p>
+
+<p>
+  <strong>Product name:</strong>
+  <%= @sale.product_name %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @sale.quantity %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= number_with_precision(@sale.price, :precision => 2) %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @sale.created_at %>
+</p>
+
+<%= link_to 'Edit', edit_sale_path(@sale) %> |
+<%= link_to 'Back', sales_path %>
