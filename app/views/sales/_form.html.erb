@@ -12,18 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :product_code %>
-    <%= form.text_field :product_code, id: :sale_product_code %>
+    <%= form.label :code %>
+    <%= form.text_field :code, id: :sale_code %>
   </div>
 
   <div class="field">
-    <%= form.label :product_name %>
-    <%= form.text_field :product_name, id: :sale_product_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :quantity %>
-    <%= form.number_field :quantity, id: :sale_quantity %>
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :sale_name %>
   </div>
 
   <div class="field">
@@ -32,8 +27,13 @@
   </div>
 
   <div class="field">
+    <%= form.label :quantity %>
+    <%= form.number_field :quantity, id: :sale_quantity %>
+  </div>
+
+  <div class="field">
     <%= form.label :created_at %>
-    <%= form.date_select :created_at, id: :sale_created_at %>
+    <%= form.datetime_select :created_at, id: :sale_created_at %>
   </div>
 
   <div class="actions">
