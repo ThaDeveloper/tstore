@@ -12,31 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :code %>
-    <%= form.text_field :code, id: :sale_code %>
-  </div>
-
-  <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name, id: :sale_name %>
   </div>
 
   <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price, id: :sale_price %>
+    <%= form.label :total %>
+    <%= form.text_field :total, id: :sale_total %>
   </div>
 
-  <div class="field">
-    <%= form.label :quantity %>
-    <%= form.number_field :quantity, id: :sale_quantity, :value => 1%>
-  </div>
-
-  <div class="field">
-    <%= form.label :created_at %>
-    <%= form.datetime_select :created_at, id: :sale_created_at %>
-  </div>
-
-  <div class="actions">
+   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>

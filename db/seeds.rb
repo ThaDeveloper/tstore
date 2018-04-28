@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+r1 = Role.create(:name => 'user')  
+r2 = Role.create(:name => 'admin')  
+us1 = User.create(:email => 'user@gmail.com' , :password => 'pass1234', :role_id => r1.id)   
+us2 = User.create(:email => 'admin@gmail.com' , :password => 'pass1234', :role_id => r2.id)    

@@ -1,28 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Code:</strong>
-  <%= @sale.code %>
-</p>
-
-<p>
   <strong>Name:</strong>
   <%= @sale.name %>
 </p>
 
 <p>
-  <strong>Price:</strong>
-  <td>€<%=  number_with_precision(@sale.price, :precision => 2) %></td>
+  <strong>Total:</strong>
+  <%= @sale.total %>
 </p>
 
 <p>
-  <strong>Quantity:</strong>
-  <%= @sale.quantity %>
-</p>
-
-<p>
-  <strong>Created at:</strong>
-  <%= @sale.created_at.strftime("%FT%T") %>
+  <strong>User:</strong>
+  <%= @sale.user %>
 </p>
 
 <%= link_to 'Edit', edit_sale_path(@sale) %> |

@@ -4,10 +4,10 @@ one:
   code: MyString
   name: MyString
   price: 9.99
-  quantity: 1
+  user: one
 
 two:
   code: MyString
   name: MyString
   price: 9.99
-  quantity: 1
+  user: two

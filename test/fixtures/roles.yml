@@ -2,10 +2,6 @@
 
 one:
   name: MyString
-  total: 9.99
-  user: one
 
 two:
   name: MyString
-  total: 9.99
-  user: two
