@@ -33,7 +33,8 @@ gem 'devise'
 #Assigning roles/privilleges   
 gem "cancancan"  
 #adding nested forms to sales 
-gem "nested_form"    
+gem "nested_form" 
+#Record user activities - incase of fraud or mistakes   
 gem 'public_activity'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'jquery-rails'

@@ -4,4 +4,5 @@ class ApplicationController < ActionController::Base
     flash[:error] = "Access denied! You don't have permission for that action."  
     redirect_to root_url  
   end 
+  include PublicActivity::StoreController
 end
