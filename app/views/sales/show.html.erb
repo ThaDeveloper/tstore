@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>  
  <p>  
-  <strong>Name:</strong>  
-  <%= @sale.name %>  
+  <strong>User:</strong>  
+  <%= @sale.user.email %>  
  </p>  
  <%= link_to 'Edit', edit_sale_path(@sale) %> |  
  <%= link_to 'Back', sales_path %>  
@@ -20,14 +20,14 @@
    <% @sale.items.each do |item| %>  
     <tr>  
      <td><%= item.product.name %></td>  
-     <td><%= item.product.price %></td>  
+     <td>€ <%= number_with_precision(item.product.price, :precision => 2) %></td>  
      <td><%= item.quantity %></td>  
-     <td><%= item.total %></td>  
+     <td>€ <%= number_with_precision(item.total, :precision => 2) %></td>  
     </tr>  
    <% end %>  
   </tbody>  
  </table>  
  <hr>  
-  <p> Total </p>  
-  <%= @sale.total%>  
+  <p> Total</p>  
+  € <%= @sale.total%>  
  <hr>  

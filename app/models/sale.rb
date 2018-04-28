@@ -8,9 +8,9 @@ class Sale < ApplicationRecord
   
   def subtotals  
     self.items.map { |i| i.subtotal }  
-   end  
-   def total_all  
+  end  
+  def total_all  
     subtotals.sum  
-   end  
+  end  
    
 end

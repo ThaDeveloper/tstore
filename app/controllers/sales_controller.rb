@@ -36,6 +36,7 @@ class SalesController < ApplicationController
   # PATCH/PUT /sales/1  
   # PATCH/PUT /sales/1.json 
   def update  
+    @sale.total = @sale.total_all
     respond_to do |format|  
      if @sale.update(sale_params)  
       format.html { redirect_to @sale, notice: 'Sale was successfully updated.' }  
