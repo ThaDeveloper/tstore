@@ -26,6 +26,8 @@ class SalesController < ApplicationController
   def create
     @sale = Sale.new(sale_params)
     @sale.user_id = current_user.id
+    @sale.total = @sale.total_all
+
     respond_to do |format|
       if @sale.save
         format.html { redirect_to @sale, notice: 'Sale was successfully created.' }
@@ -69,6 +71,6 @@ class SalesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sale_params
-      params.require(:sale).permit(:name, :total, :user_id)
+      params.require(:sale).permit(:name, items_attributes: [:id,:product_id, :price,:quantity,:total,:_destroy])
     end
 end
