@@ -16,9 +16,7 @@
 #
 default: &default
   adapter: postgresql
-  encoding: utf8
-  username: <%= ENV['DB_USER'] %>
-  password: <%= ENV['DB_PASS'] %>
+  encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -83,5 +81,5 @@ test:
 production:
   <<: *default
   database: tstore_production
-
-  
+  username: tstore
+  password: <%= ENV['TSTORE_DATABASE_PASSWORD'] %>

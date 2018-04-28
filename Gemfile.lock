@@ -108,7 +108,7 @@ GEM
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
-    pg (0.21.0)
+    pg (1.0.0)
     public_activity (1.5.0)
       actionpack (>= 3.0.0)
       activerecord (>= 3.0)
@@ -214,10 +214,10 @@ DEPENDENCIES
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   nested_form
-  pg (~> 0.18)
+  pg (>= 0.18, < 2.0)
   public_activity
   puma (~> 3.7)
-  rails (~> 5.1.4)
+  rails (~> 5.1.6)
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
