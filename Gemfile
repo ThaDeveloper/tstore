@@ -29,8 +29,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'devise'   
-gem "cancancan"   
+gem 'devise'
+#Assigning roles/privilleges   
+gem "cancancan"  
+#adding nested forms to sales 
 gem "nested_form"    
 gem 'public_activity'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
