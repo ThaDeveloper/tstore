@@ -7,9 +7,8 @@
     <tr>
       <th>Code</th>
       <th>Name</th>
-      <th>Price</th>
       <th>Quantity</th>
-      <th>Created at</th>
+      <th>Price</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,17 +18,22 @@
       <tr>
         <td><%= sale.code %></td>
         <td><%= sale.name %></td>
-        <td>$<%=  number_with_precision(sale.price, :precision => 2) %></td>
         <td><%= sale.quantity %></td>
-        <td><%= sale.created_at.in_time_zone("Central Time (US & Canada)") %></td>
+        <td>€<%=  number_with_precision(sale.price, :precision => 2) %></td>
+        <!--<td>-->
+        </td>
         <td><%= link_to 'Show', sale %></td>
         <td><%= link_to 'Edit', edit_sale_path(sale) %></td>
         <td><%= link_to 'Destroy', sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+    <tr>
+      <td>Totals</td><td></td><td><% @sales.map(quantity).sum %></td><td><%= number_with_precision(sale.total, :precision => 2) %></td>
+      </tr>
   </tbody>
 </table>
 
 <br>
 
 <%= link_to 'New Sale', new_sale_path %>
+
