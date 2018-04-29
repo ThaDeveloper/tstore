@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
   # POST /products.json  
   def create  
    @product = Product.new(product_params)  
-   @product.user_id = current_user.id #tambahkan code ini setelah code diatas   
+   @product.user_id = current_user.id    
    respond_to do |format|  
     if @product.save  
      format.html { redirect_to @product, notice: 'Product was successfully created.' }  
@@ -61,6 +61,6 @@ class ProductsController < ApplicationController
      end  
      # Never trust parameters from the scary internet, only allow the white list through.  
      def product_params  
-      params.require(:product).permit(:code, :name, :price, :user_id)  
+      params.require(:product).permit(:code, :name, :stock, :price, :user_id)  
      end   
 end

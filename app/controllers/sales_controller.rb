@@ -21,8 +21,8 @@ class SalesController < ApplicationController
   # POST /sales.json  
   def create  
    @sale = Sale.new(sale_params)  
-   @sale.user_id = current_user.id #tambahkan ini setelah code di atas   
-   @sale.total = @sale.total_all #tambahkan ini setelah code di atas  
+   @sale.user_id = current_user.id    
+   @sale.total = @sale.total_all   
    respond_to do |format|  
     if @sale.save  
      format.html { redirect_to @sale, notice: 'Sale was successfully created.' }  
@@ -63,6 +63,6 @@ class SalesController < ApplicationController
     end  
     # Never trust parameters from the scary internet, only allow the white list through.  
     def sale_params  
-     params.require(:sale).permit(:name, items_attributes: [:id,:product_id, :price,:quantity,:total,:_destroy])  
+     params.require(:sale).permit(:sale_code, items_attributes: [:id,:product_id, :price,:quantity,:total,:_destroy])  
     end 
 end

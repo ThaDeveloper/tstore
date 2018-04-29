@@ -3,8 +3,8 @@ class Sale < ApplicationRecord
   has_many :items, dependent: :delete_all
   accepts_nested_attributes_for :items, allow_destroy: true
 
-  validates :code, :presence => {:message => 'is required, Sale not saved'}
-  validates :id, :presence => {:message => '[product], atleast one item is required, Sale not saved'}
+  validates :sale_code, :presence => {:message => 'is required, Sale not saved'}
+  validates :items, :presence => {:message => '- atleast one item is required, Sale not saved'}
   
   include PublicActivity::Model  
   tracked owner: ->(controller, model) { controller && controller.current_user} 
