@@ -1,33 +1,49 @@
 <p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Sales</h3>  
+      </div>
+      <div class="panel-body">
+        <table class="table table-striped table-hover table-bordered">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>User</th>
+              <th>Code</th>
+              <th>Total</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
 
-<h1>Sales</h1>
+          <tbody>
+            <% @sales.each do |sale| %>
+              <tr>
+                <td><%= sale.created_at %></td>
+                <td><%= sale.user.email %></td>
+                <td><%= sale.sale_code %></td>
+                <td>€ <%= number_with_precision(sale.total, :precision => 2) %></td>
+                <td><%= link_to 'View', sale, class: "btn btn-success"%></td>  
+                <% if can? :update, Sale %>  
+                <td><%= link_to 'Edit', edit_sale_path(sale), class: "btn btn-warning" %></td>  
+                <%end%>  
+                <% if can? :destroy, Sale %>  
+                <td><%= link_to 'Delete', sale, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>  
+                <% end %>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div><!--panel-body-->
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Total</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @sales.each do |sale| %>
-      <tr>
-        <td><%= sale.user.email %></td>
-        <td>€ <%= number_with_precision(sale.total, :precision => 2) %></td>
-        <td><%= link_to 'Show', sale %></td>  
-        <% if can? :update, Sale %>  
-        <td><%= link_to 'Edit', edit_sale_path(sale) %></td>  
-        <%end%>  
-        <% if can? :destroy, Sale %>  
-        <td><%= link_to 'Destroy', sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>  
+      <div class="panel-footer">
+        <% if can? :create, Sale %>
+          <%= link_to 'New Sale', new_sale_path, class: "btn btn-primary" %>
         <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      </div>
+    </div>
+  </div>
+</div>
 
-<br>
 
-<%= link_to 'New Sale', new_sale_path %>

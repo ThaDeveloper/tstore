@@ -1,3 +1,38 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#product-wrap {
+	position: relative;
+  	background: #fff;
+  	border: 1px solid #f4f4f4;
+  	padding: 10px;
+    margin: 10px 25px;
+    
+    .product-info{
+        margin: 10px;
+        height: 100%;
+        .form-group {
+            input{ width: 70%; 
+                margin-bottom:15px; 
+                float: center; 
+                text-align: left;
+                
+            }
+            button{
+                width: 50%;
+                text-align: center;
+                font-size: 1.5em;
+            }
+        }
+    }
+}
+.page-header {
+    margin: 10px 0 20px 0;
+    font-size: 22px;
+}
+.page-header > small {
+color: #666;
+display: block;
+margin-top: 5px;
+font-size: 12px;
+}
