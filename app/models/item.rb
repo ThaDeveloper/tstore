@@ -1,12 +1,10 @@
 class Item < ApplicationRecord
   belongs_to :product
   belongs_to :sale
+  validates :quantity, presence: true, numericality: { only_integer: true, greater_than: 0 }
 
   before_save :set_total 
   before_update :set_total
-
-  validates :quantity, :presence => {:message => 'cannot be blank, Item not saved'}
-  
 
   def set_total  
     if self.quantity.blank?  

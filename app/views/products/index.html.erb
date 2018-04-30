@@ -22,7 +22,7 @@
                 <td><%= product.code %></td>
                 <td><%= product.name %></td>  
                 <td><%= product.stock %></td>   
-                <td><%= product.price %></td>  
+                <td>€ <%= number_with_precision(product.price, :precision => 2) %></td>  
                 <td><%= link_to 'View', product, class: "btn btn-success" %></td>  
                 <% if can? :update, Product %>  
                 <td><%= link_to 'Edit', edit_product_path(product), class: "btn btn-warning" %></td>  

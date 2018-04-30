@@ -1,6 +1,6 @@
  Updated sale  
  <% if activity.trackable %>  
-  <%= link_to activity.trackable.name, sale_path(activity.trackable.id) %>  
+  <%= link_to activity.trackable.sale_code, sale_path(activity.trackable.id) %>  
  <% else %>  
   which has since been removed  
  <% end %> 
