@@ -19,6 +19,10 @@
           <strong>Price:</strong>
           € <%= number_with_precision(@product.price, :precision => 2) %>
         </p>
+         <p>
+          <strong>Discount Price:</strong>
+          € <%= number_with_precision(@product.discount_price, :precision => 2) %>
+        </p>
       </div>
       <div class="panel-footer">
         <div class="btn-group">

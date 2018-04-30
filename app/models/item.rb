@@ -3,32 +3,29 @@ class Item < ApplicationRecord
   belongs_to :sale
   validates :quantity, presence: true, numericality: { only_integer: true, greater_than: 0 }
 
-  before_save :set_total 
-  before_update :set_total
+  before_save :set_total
+
+  def promote
+    if self.quantity >= 2
+      self.total = (self.quantity/2.to_f).ceil * self.product.price
+    else
+      self.total = self.quantity * self.product.price  
+    end
+  end
 
   def set_total  
     if self.quantity.blank?  
       return 0 
     else
-      if self.product.code=="TICKET"
-        Product.find_by_code("TICKET").stock=Product.find_by_code("TICKET").stock-self.quantity
-        if self.quantity >= 2
-          self.total = (self.quantity/2.to_f).ceil * self.product.price
-        else
-          self.total = self.quantity * self.product.price  
-        end
-      
-      elsif self.product.code=="HOODIE"
-        if self.quantity >= 3
-          self.total = self.quantity * 19.00
-        else
-          self.total = self.quantity * self.product.price  
-        end
-      
-      elsif self.product.code=="HAT"
-        self.total = self.quantity * self.product.price  
+      self.product.stock=self.product.stock-self.quantity
+      if self.product.promotion_opt==true
+        self.promote
       else
-        self.total = self.quantity * self.product.price
+        if self.quantity >= 3 &&  self.product.promotion_opt == false
+          self.total = self.quantity * self.product.discount_price
+        else
+          self.total = self.quantity * self.product.price
+        end 
       end
     end
   end 
@@ -37,24 +34,18 @@ class Item < ApplicationRecord
     if self.quantity.blank?  
      return 0  
     else  
-      if self.product.code=="TICKET"
-        Product.find_by_code("TICKET").stock=Product.find_by_code("TICKET").stock-self.quantity
+      if self.product.promotion_opt == true
         if self.quantity >= 2
           (self.quantity/2.to_f).ceil * self.product.price
         else
           self.quantity * self.product.price  
         end
-      
-      elsif self.product.code == "HOODIE"
-        if self.quantity >= 3
-          self.quantity * 19.00
-        else
-          self.quantity * self.product.price  
-        end 
-      elsif self.product.code == "HAT"
-        self.quantity * self.product.price 
       else
-        self.quantity * self.product.price 
+        if self.quantity >= 3 && self.product.promotion_opt == false
+          self.quantity * self.product.discount_price
+        else
+          self.quantity * self.product.price
+        end
       end
     end
   end

@@ -5,7 +5,7 @@ class Sale < ApplicationRecord
 
   validates :sale_code, :presence => {:message => 'is required, Sale not saved'}
   validates :items, :presence => {:message => '- atleast one item is required, Sale not saved'}
-  
+    
   include PublicActivity::Model  
   tracked owner: ->(controller, model) { controller && controller.current_user} 
   

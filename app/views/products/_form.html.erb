@@ -26,13 +26,17 @@
             <%= f.text_field :name, class: "form-control", placeholder: "Product Name"  %>  
           </div>  
           <div class="form-group">  
-            
             <%= f.text_field :stock, class: "form-control", placeholder: "Available Stock"  %>  
-            </div>
+          </div>
           <div class="form-group">  
-           
             <%= f.text_field :price, class: "form-control", placeholder: "Product Price"  %>  
-          </div> <br> 
+          </div>
+          <div class="form-group">  
+            <%= f.text_field :discount_price, class: "form-control", placeholder: "Discount Price"  %>  
+          </div>
+          <div class="form-group">  
+            <%= f.text_field :promotion_opt, class: "form-control", placeholder: "Promotion Opt"  %>  
+          </div><br>
           <div class="form-group">  
             <%= f.button :submit, class: "btn btn-primary btn-large" %>  
           </div>
