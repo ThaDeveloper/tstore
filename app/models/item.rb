@@ -4,6 +4,18 @@ class Item < ApplicationRecord
   validates :quantity, presence: true, numericality: { only_integer: true, greater_than: 0 }
 
   before_save :set_total
+  after_save :remove_from_stock
+  after_destroy :return_to_stock
+  
+  def remove_from_stock
+    product.stock -= self.quantity
+    product.save
+  end
+
+  def return_to_stock
+    product.stock += self.quantity
+    product.save
+  end
 
   def promote
     if self.quantity >= 2
@@ -17,7 +29,6 @@ class Item < ApplicationRecord
     if self.quantity.blank?  
       return 0 
     else
-      self.product.stock=self.product.stock-self.quantity
       if self.product.promotion_opt==true
         self.promote
       else
