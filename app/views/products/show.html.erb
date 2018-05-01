@@ -29,6 +29,11 @@
           <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-warning" %> 
           <%= link_to 'Back', products_path, class: "btn btn-default" %>
         </div>
+        <div class="pull-right">
+          <% if can? :create, Product %>
+            <%= link_to 'Add Another Product', new_product_path, class: "btn btn-primary" %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

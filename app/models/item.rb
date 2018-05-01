@@ -3,10 +3,11 @@ class Item < ApplicationRecord
   belongs_to :sale
   validates :quantity, presence: true, numericality: { only_integer: true, greater_than: 0 }
 
-  before_save :set_total
+  before_save :set_total, :subtotal
   after_save :remove_from_stock
   after_destroy :return_to_stock
   
+  #These two methods updates product stock once a sale has been made
   def remove_from_stock
     product.stock -= self.quantity
     product.save
@@ -17,6 +18,7 @@ class Item < ApplicationRecord
     product.save
   end
 
+  #To be called for products that have promotion eg 2-for-1 buy one get one free 
   def promote
     if self.quantity >= 2
       self.total = (self.quantity/2.to_f).ceil * self.product.price
@@ -25,6 +27,7 @@ class Item < ApplicationRecord
     end
   end
 
+  #Updates the totals of individual sale item 
   def set_total  
     if self.quantity.blank?  
       return 0 
@@ -41,6 +44,7 @@ class Item < ApplicationRecord
     end
   end 
 
+  #Gets subtotal for for the sale items
   def subtotal  
     if self.quantity.blank?  
      return 0  
