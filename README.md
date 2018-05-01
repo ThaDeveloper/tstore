@@ -7,6 +7,10 @@ A positive store for a positive customer. Build in rails, postgresql, JQuery and
 
 ## Run the App 
 
+### Live version
+
+Visit https://tstore-dev.herokuapp.com/
+
 ### Locally
  `$ git clone https://github.com/ThaDeveloper/tstore.git`
  
