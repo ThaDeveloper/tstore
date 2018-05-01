@@ -9,10 +9,15 @@ A positive store for a positive customer. Build in rails, postgresql, JQuery and
 
 ### Locally
  `$ git clone https://github.com/ThaDeveloper/tstore.git`
+ 
  `$ cd tstore`
+ 
   Ensure you have the latest versions of Ruby, Rails  and Postgresql installed.
+  
  `$ bundle install`
+ 
  `$ rake db:create rake db:migrate` to create and migrate  test and development databases
+ 
  Finally run `$ rails s` and visit http://0.0.0.0:3000
 
 
