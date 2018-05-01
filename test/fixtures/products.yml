@@ -4,10 +4,14 @@ one:
   code: MyString
   name: MyString
   price: 9.99
-  user: one
+  discount_price: 9.99
+  promotion_opt: false
+  stock: 1
 
 two:
   code: MyString
   name: MyString
   price: 9.99
-  user: two
+  discount_price: 9.99
+  promotion_opt: false
+  stock: 1

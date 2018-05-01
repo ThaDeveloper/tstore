@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20180430195009) do
   create_table "products", force: :cascade do |t|
     t.string "code"
     t.string "name"
-    t.decimal "price"
+    t.decimal "price", precision: 8, scale: 2
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20180430195009) do
 
   create_table "sales", force: :cascade do |t|
     t.string "sale_code"
-    t.decimal "total"
+    t.decimal "total", precision: 8, scale: 2
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

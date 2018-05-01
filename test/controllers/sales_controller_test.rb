@@ -4,6 +4,11 @@ class SalesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @sale = sales(:one)
   end
+  #called after every single test
+  teardown do
+    # when controller is using cache it may be a good idea to reset it afterwards
+    Rails.cache.clear
+  end
 
   test "should get index" do
     get sales_url
@@ -16,8 +21,8 @@ class SalesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create sale" do
-    assert_difference('Sale.count') do
-      post sales_url, params: { sale: { name: @sale.name, total: @sale.total, user_id: @sale.user_id } }
+    assert_difference('Sale.count',1) do
+      post sales_url, params: { sale: { sale_code: @sale.sale_code, total: @sale.total, user_id: @sale.user_id } }
     end
 
     assert_redirected_to sale_url(Sale.last)
@@ -34,7 +39,7 @@ class SalesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update sale" do
-    patch sale_url(@sale), params: { sale: { name: @sale.name, total: @sale.total, user_id: @sale.user_id } }
+    patch sale_url(@sale), params: { sale: { sale_code: @sale.sale_code, total: @sale.total, user_id: @sale.user_id } }
     assert_redirected_to sale_url(@sale)
   end
 
