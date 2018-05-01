@@ -16,7 +16,16 @@ A positive store for a positive customer. Build in rails, postgresql, JQuery and
   
  `$ bundle install`
  
- `$ rake db:create && rake db:migrate` to create and migrate  test and development databases
+ `$ rake db:create && rake db:migrate` to create and migrate  test and development databases.
+ 
+  **NOTE**: You will have to create enviroment variables in the following fortmat before running these commands:
+  
+  
+  *export DB_USER=youruserbasedonrolescreated*
+  
+  
+  *export DB_USER=youruserpasswordcreated*
+  
  
  Finally run `$ rails s` and visit http://0.0.0.0:3000
 
