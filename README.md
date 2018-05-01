@@ -16,7 +16,7 @@ A positive store for a positive customer. Build in rails, postgresql, JQuery and
   
  `$ bundle install`
  
- `$ rake db:create rake db:migrate` to create and migrate  test and development databases
+ `$ rake db:create && rake db:migrate` to create and migrate  test and development databases
  
  Finally run `$ rails s` and visit http://0.0.0.0:3000
 
