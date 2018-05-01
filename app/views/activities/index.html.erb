@@ -8,7 +8,9 @@
        <table class="table table-striped table-bordered table-condensed sortable">  
        <thead>  
          <tr>  
-           <th><%= "Activities"%></th>  
+           <th>User</th>
+           <th>Ativity</th> 
+           <th>Date/Time</th>   
          </tr>  
        </thead>  
        <tbody>  
@@ -16,8 +18,14 @@
          <tr>  
            <td valign="top">   
              <%= activity.owner.email %>  
-             <%= render_activity activity %>  
-           </td>  
+              
+           </td> 
+           <td>
+            <%= render_activity activity %> 
+           </td>
+            <td>
+             <%= activity.created_at.strftime("%F @ %T") %>
+           </td>
          </tr>  
          <% end %>  
        </tbody>  

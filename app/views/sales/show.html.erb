@@ -2,13 +2,9 @@
   <div class="col-md-8.col-md-offset-2">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Sale Item</h3>  
+        <h3 class="panel-title">Sale Item - <%= @sale.sale_code %></h3>  
       </div>
       <div class="panel-body">
-        <p>  
-        <strong>User:</strong>  
-        <%= @sale.user.email %>  
-        </p>  
         <table class="table table-striped table-hover table-bordered">  
         <thead>  
         <tr>  
@@ -31,7 +27,8 @@
         </table>  
         <hr>  
         <p> Total</p>  
-        € <%= @sale.total%>  
+        € <%= @sale.total%> 
+        <button href="#" onclick="print_invoice()" class="btn btn-info pull-right"><i class="fa fa-print"></i>Receipt </button> 
         <hr> 
       </div>
       <div class="panel-footer">
@@ -48,3 +45,9 @@
     </div>
   </div>
 </div>
+
+<script>
+  function print_invoice() {
+    window.print();
+  }
+</script>
