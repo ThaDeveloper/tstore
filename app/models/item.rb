@@ -3,7 +3,7 @@ class Item < ApplicationRecord
   belongs_to :sale
   validates :quantity, presence: true, numericality: { only_integer: true, greater_than: 0 }
 
-  before_save :set_total
+  before_save :set_total, :subtotal
   after_save :remove_from_stock
   after_destroy :return_to_stock
   
