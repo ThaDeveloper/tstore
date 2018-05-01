@@ -13,8 +13,8 @@ deploy:
   api_key:
     secure: bf9hJP6jwE6G8vW0WsDjKxPIpxH1kd3m1GljNQ3ZYkagzjkrSylDeYwRV8Hdsht5kVEGqg+ZjUeAgTUzyTFHwPOoYZyOXzxigD7U19BTde8eeJJQx9mQUKZD8QAF8IUvivKTCxyhit2o1nKmVejYu9u5o86G+TWiy28LEXE4fbCUxXqEgKIAewkhK8oyLUzdW3L5cUyOt8WKV9i0yX0CC4I6zgnAqiQ/AgIeP+E5nrcShQtswd7HKdXwft8QVEcRFJwKmlt1eedUWs9aEVU3+U9shYMPJbN+RMKGXefzOrZfKCXoO5cTxnyB1XVjBpzb8FHij044UjFovUOarMwlZBIdjxtrm5PCLSHKO8VU7FHks60EriHNQnbLOqCLkBviinPTPlhPtK/RjKTu7zdsJnDxlUY+KEd+g0lbeyh58513S2QmjuyrPu54aKuXozEJJI1PcT7+6Y9qoA/LMKHpNPqX109FKT4/XN5W1LG1BWCkm1nFZmyxDuMJAijO5up5od4KoxoqOOX0EyBBzS1WHoYPbQ4iaMMxRWJdPDHDk/mdUtkPdF96ufR+TpjlPl/VVTOw9iY5QiKFgPOtrS8ZTMeF3t8zNGlzwcf3rHYwYqogdLPhwiPrrkm8rYdNYEfk5ptkoxCrKD2F1MW6csOwnXIMqDLXilOx41pILFIRXdA=
   app:
-    develop: tstore_dev
-    master: tstore_prod
+    ft-shop: triggerise-store
+    master: triggerise-store
   on:
     repo: thadeveloper/tstore
   run:
