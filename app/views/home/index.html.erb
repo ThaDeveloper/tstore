@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Welcome to T-Store</h3>  
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-6">
+          <h2><p>Help us give our esteemed customers a lovely experience.</p></h2>
+          </div>
+          <div class="col-md-6">
+            <%= image_tag("t.png", :alt => "Triggerise") %>
+          </div>
+        </div><!--row-->
+        
+      </div>
+      <div class="panel-footer">
+        <% if can? :create, Sale %>
+          <%= link_to 'New Sale', new_sale_path, class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

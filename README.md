@@ -1,6 +1,19 @@
 # Tstore
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c0a243b8cbbf494ca5d0a0438a1bca37)](https://www.codacy.com/app/ThaDeveloper/tstore?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ThaDeveloper/tstore&amp;utm_campaign=Badge_Grade)
+
 A positive store for a positive customer. Build in rails, postgresql, JQuery and bootstrap.
 
+
+## Run the App 
+
+### Locally
+ `$ git clone https://github.com/ThaDeveloper/tstore.git`
+ `$ cd tstore`
+  Ensure you have the latest versions of Ruby, Rails  and Postgresql installed.
+ `$ bundle install`
+ `$ rake db:create rake db:migrate` to create and migrate  test and development databases
+ Finally run `$ rails s` and visit http://0.0.0.0:3000
 
 
 ## License

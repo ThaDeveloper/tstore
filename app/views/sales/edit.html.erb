@@ -1,6 +1,15 @@
-<h1>Editing Sale</h1>
-
-<%= render 'form', sale: @sale %>
-
-<%= link_to 'Show', @sale %> |
-<%= link_to 'Back', sales_path %>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Edit Sale</h3>
+            </div>
+            <div class="panel-body">
+                <%= render 'form', sale: @sale %>
+            </div>
+            <div class="panel-footer">
+                <%= link_to '<< Back', @sale, class: "btn btn-default" %>
+            </div>
+        </div>
+    </div>
+</div>
