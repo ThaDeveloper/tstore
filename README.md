@@ -10,6 +10,10 @@ A positive store for a positive customer. Build in rails, postgresql, JQuery and
 ### Live version
 
 Visit https://tstore-dev.herokuapp.com/
+  Sample user - username : **user**, password : **pass1234**
+  
+   
+  Sample admin - username: **admin**, password : **pass1234**
 
 ### Locally
  `$ git clone https://github.com/ThaDeveloper/tstore.git`
@@ -31,6 +35,14 @@ Visit https://tstore-dev.herokuapp.com/
   *export DB_USER=youruserpasswordcreated*
   
  
+ `$ rake db:seed` to get sample login data.
+ 
+   Sample user - username : **user**, password : **pass1234**
+   
+   
+   Sample admin - username: **admin**, password : **pass1234**
+   
+   
  Finally run `$ rails s` and visit http://0.0.0.0:3000
 
 

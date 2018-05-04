@@ -16,7 +16,7 @@
 #
 default: &default
   adapter: postgresql
-  encoding: unicode
+  encoding: SQL_ASCII
   username: <% ENV['DB_USER'] %>
   password: <% ENV['DB_PASS'] %>
   # For details on connection pooling, see Rails configuration guide
@@ -83,5 +83,4 @@ test:
 production:
   <<: *default
   database: tstore_production
-  username: tstore
-  password: <%= ENV['TSTORE_DATABASE_PASSWORD'] %>
+ 
