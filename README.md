@@ -10,6 +10,7 @@ A positive store for a positive customer. Build in rails, postgresql, JQuery and
 ### Live version
 
 Visit https://tstore-dev.herokuapp.com/
+
   Sample user - username : **user**, password : **pass1234**
   
    
