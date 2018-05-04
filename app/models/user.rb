@@ -6,7 +6,8 @@ class User < ApplicationRecord
 
   belongs_to :role
 
-  before_create :set_default_role  
+  before_validation :set_default_role, on: [:create, :update]
+  
   private  
   def set_default_role  
     self.role ||= Role.find_by_name('user')  
